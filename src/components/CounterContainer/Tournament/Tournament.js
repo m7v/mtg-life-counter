@@ -3,20 +3,27 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../../helpers/actionCreators';
 
-class Reseter extends Component {
-  resetAll() {
-    this.props.resetAll();
+class Tournament extends Component {
+  endGame() {
+    this.props.endGame(this.props.players);
   }
 
   render() {
     return (
-      <button onClick={() => this.resetAll()}>Reset All</button>
+      <button onClick={() => this.endGame()}>End Game</button>
     );
   }
+}
+function mapStateToProps(state) {
+  return {
+    tournament: state.tournament,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(actions, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(Reseter);
+export default connect(mapStateToProps, mapDispatchToProps)(Tournament);
+
+

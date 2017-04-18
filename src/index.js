@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App/App';
+import {List, Map} from 'immutable';
 import './index.css';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
@@ -13,11 +14,11 @@ const rootReducer = combineReducers({
 });
 
 const initialState = {
-  tournament: [],
-  players: [
-    {name:'Player 1', manaStack: '', life: 20},
-    {name:'Player 2', manaStack: '', life: 20}
-  ],
+  tournament: List([]),
+  players: List([
+    Map({name:'Player 1', manaStack: '', life: 20, winner: false}),
+    Map({name:'Player 2', manaStack: '', life: 20, winner: false})
+  ]),
 };
 
 const store = createStore(

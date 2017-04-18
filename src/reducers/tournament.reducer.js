@@ -1,13 +1,15 @@
 import {List} from 'immutable';
+import { END_GAME } from '../helpers/actionTypes';
 
-function add(state, id) {
-  return state.set(id, state);
+function endGame(state, players) {
+  debugger;
+  return state.push(players);
 }
 
 export default function(state = List([]), action) {
   switch (action.type) {
-    case 'ADD_GAME':
-      return add(state, action.id);
+    case END_GAME:
+      return endGame(state, action.players);
     default:
       return state;
   }

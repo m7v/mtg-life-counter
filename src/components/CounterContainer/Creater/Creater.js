@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../../helpers/actionCreators';
 
-class Reseter extends Component {
-  resetAll() {
-    this.props.resetAll();
+class Creater extends Component {
+  increment() {
+    this.props.addPlayer('new Player', 'www');
   }
 
   render() {
     return (
-      <button onClick={() => this.resetAll()}>Reset All</button>
+      <button onClick={() => this.increment()}>Add Player</button>
     );
   }
 }
@@ -19,4 +19,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(actions, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(Reseter);
+export default connect(null, mapDispatchToProps)(Creater);
