@@ -1,0 +1,15 @@
+{
+  "background_color": "#222",
+  "name": "Magic The Gathering",
+  "short_name": "MTG counter",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "logo-mtg.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "orientation": "portrait"
+}

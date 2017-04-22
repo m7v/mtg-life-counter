@@ -16,7 +16,7 @@ class CounterContainer extends Component {
         <Remover/>
         <Reseter/>
       </div>
-      <div>
+      <div className="playersContainer">
         {this.props.players.map((player, key) => <PlayerCounter key={ key } index={key} player={player}/>)}
       </div>
       <Tournament players={ this.props.players }/>

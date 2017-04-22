@@ -2,6 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta property="og:title" content="Andrew Mikhailov | JavaScript Developer">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="//redkin.pro/assets/images/logos/js.jpg">
+    <meta name="twitter:title" content="Andrew Mikhailov | JavaScript Developer">
+    <meta name="twitter:description" content="JavaScript Developer at @2gis">
+    <meta name="twitter:image" content="//redkin.pro/assets/images/logos/js.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@andrew-mikhailov.github.io">
+    <meta name="twitter:creator" content="@mikhailovcom">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Mikhailov | JavaScript Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <!--
@@ -16,7 +30,6 @@
     <title>React App</title>
   </head>
   <body>
-    <div id="root"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -27,5 +40,50 @@
       To begin the development, run `npm start`.
       To create a production bundle, use `npm run build`.
     -->
+    <div class="container">
+      <section id="trailer" class="is_overlay">
+        <video loop="" autoplay="autoplay" muted="muted" poster="img/background.jpg">
+          <source type="video/mp4" src="video/background.mp4">
+          <source type="video/webm" src="video/background.webm">
+          <img src="img/background.jpg" alt="AJANI GOLDMANE">
+        </video>
+      </section>
+      <div class='stars'></div>
+      <div class='stars2'></div>
+      <div class='stars3'></div>
+      <section class="bio">
+        <div class='title'>
+          <div class="name">
+            <div id="root"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script type="text/javascript">
+      window.onload = function () {
+        var element = document.getElementsByClassName('splash-screen');
+        if (element.length && element[0]) {
+          element = element[0];
+          var classString = element.className;
+          element.className = classString + " hide";
+        }
+      }
+    </script>
+    <script type="text/javascript">
+//      if ('serviceWorker' in navigator) {
+//        var reg = navigator.serviceWorker.register('./sw.js');
+//        reg.then(function () {
+//          reg = navigator.serviceWorker.ready;
+//          reg.then(function (reg) {
+//            reg.sync.register('syncdata');
+//          }).catch(function (err) {
+//            console.log(err);
+//          });
+//        }).catch(function (err) {
+//          console.log(err);
+//        });
+//      }
+    </script>
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
   </body>
 </html>
