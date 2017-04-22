@@ -1,23 +1,35 @@
-import { ADD_PLAYER,
+import {
+  ADD_PLAYER,
   REMOVE_PLAYER,
   INCREASE,
   DECREASE,
   RESET_ALL,
   SET_STATE,
-  END_GAME,
-  SET_WINNER
+  NEXT_HERO,
+  PREV_HERO
 } from './actionTypes';
 
-export function addPlayer(name, manaStack) {
+export function addPlayer() {
   return {
-    type: ADD_PLAYER,
-    name,
-    manaStack
+    type: ADD_PLAYER
   };
 }
 export function removePlayer() {
   return {
     type: REMOVE_PLAYER
+  };
+}
+
+export function nextHero(id) {
+  return {
+    type: NEXT_HERO,
+    id
+  };
+}
+export function prevHero(id) {
+  return {
+    type: PREV_HERO,
+    id
   };
 }
 
@@ -38,20 +50,6 @@ export function decrement(id) {
 export function resetAll() {
   return {
     type: RESET_ALL
-  };
-}
-
-export function winner(id) {
-  return {
-    type: SET_WINNER,
-    id
-  };
-}
-
-export function endGame(players) {
-  return {
-    type: END_GAME,
-    players
   };
 }
 

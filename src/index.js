@@ -5,20 +5,18 @@ import {List, Map} from 'immutable';
 import './index.css';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import tournament from './reducers/tournament.reducer';
 import players from './reducers/players.reducer';
+import {HEROLIST} from "./helpers/heroList";
 
 const rootReducer = combineReducers({
-  tournament,
   players
 });
 
 const initialState = {
-  tournament: List([]),
   players: List([
-    Map({name:'Player 1', manaStack: '', life: 20, winner: false}),
-    Map({name:'Player 2', manaStack: '', life: 20, winner: false})
-  ]),
+    Map({life: 20, position: 0, currentHero: HEROLIST.get(0)}),
+    Map({life: 20, position: 1, currentHero: HEROLIST.get(1)})
+  ])
 };
 
 const store = createStore(
@@ -26,19 +24,6 @@ const store = createStore(
   initialState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
-
-// if (localStorage.getItem('counter') && localStorage.getItem('counter').split(',').length) {
-//   const newState = localStorage
-//     .getItem('counter')
-//     .split(',')
-//     .map(value => Number(value));
-//   store.dispatch({
-//     type: 'SET_STATE',
-//     newState
-//   });
-// }
-
-// store.subscribe(() => localStorage.setItem('magicApp', store.getState().toArray()));
 
 ReactDOM.render(
   <Provider store={store}>

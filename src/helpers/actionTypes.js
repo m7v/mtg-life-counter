@@ -6,3 +6,7 @@ export const RESET_ALL = 'RESET_ALL';
 export const SET_STATE = 'SET_STATE';
 export const END_GAME = 'END_GAME';
 export const SET_WINNER = 'SET_WINNER';
+export const NEXT_HERO = 'NEXT_HERO';
+export const PREV_HERO = 'PREV_HERO';
+export const MAX_PLAYERS = 4;
+export const MIN_PLAYERS = 2;

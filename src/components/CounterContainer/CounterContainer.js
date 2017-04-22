@@ -6,7 +6,6 @@ import PlayerCounter from './PlayerCounter/PlayerCounter';
 import Reseter from './Reseter/Reseter';
 import Creater from './Creater/Creater';
 import Remover from './Remover/Remover';
-import Tournament from './Tournament/Tournament';
 
 class CounterContainer extends Component {
   render() {
@@ -17,9 +16,10 @@ class CounterContainer extends Component {
         <Reseter/>
       </div>
       <div className="playersContainer">
-        {this.props.players.map((player, key) => <PlayerCounter key={ key } index={key} player={player}/>)}
+        {this.props.players.map((player, key) => <PlayerCounter key={ key }
+                                                                index={key}
+                                                                player={player}/>)}
       </div>
-      <Tournament players={ this.props.players }/>
     </div>
   }
 }

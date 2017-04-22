@@ -6,12 +6,42 @@ import {
   DECREASE,
   RESET_ALL,
   SET_STATE,
-  SET_WINNER
+  MAX_PLAYERS,
+  MIN_PLAYERS,
+  NEXT_HERO,
+  PREV_HERO
 } from '../helpers/actionTypes';
+import {HEROLIST} from "../helpers/heroList";
 
-function setWinner(state, id) {
+function nextHero(state, id) {
   const player = state.get(id);
-  return state.set(id, player.set('winner', true));
+  const position = player.get('position');
+  if (HEROLIST.size !==  position + 1) {
+    const newPlayer = player.set('position', position + 1);
+    const newHero = HEROLIST.get(newPlayer.get('position'));
+    return state.set(id, newPlayer.set('currentHero', newHero));
+  }
+  else {
+    const newPlayer = player.set('position', 0);
+    const newHero = HEROLIST.get(newPlayer.get('position'));
+    return state.set(id, newPlayer.set('currentHero', newHero));
+  }
+}
+
+function prevHero(state, id) {
+  const player = state.get(id);
+  const position = player.get('position');
+  if (position - 1 > 0) {
+    const newPlayer = player.set('position', position - 1);
+    const newHero = HEROLIST.get(newPlayer.get('position'));
+    return state.set(id, newPlayer.set('currentHero', newHero));
+  }
+  else {
+    const heroCount = HEROLIST.size;
+    const newPlayer = player.set('position', heroCount - 1);
+    const newHero = HEROLIST.get(newPlayer.get('position'));
+    return state.set(id, newPlayer.set('currentHero', newHero));
+  }
 }
 
 function increase(state, id) {
@@ -24,17 +54,22 @@ function decrease(state, id) {
   return state.set(id, player.set('life', player.get('life') - 1));
 }
 
-function addPlayer(state, name, manaStack) {
-  return state.push(Map({
-    name,
-    manaStack,
-    life: 20,
-    winner: false
-  }));
+function addPlayer(state) {
+  if (state.size !== MAX_PLAYERS) {
+    return state.push(Map({
+      life: 20,
+      position: state.size,
+      currentHero: HEROLIST.get(state.size)
+    }));
+  }
+  return state;
 }
 
 function removePlayer(state) {
-  return state.pop();
+  if (state.size !== MIN_PLAYERS) {
+    return state.pop();
+  }
+  return state
 }
 
 function resetAll(state) {
@@ -52,15 +87,17 @@ export default function(state = List([]), action) {
     case DECREASE:
       return decrease(state, action.id);
     case ADD_PLAYER:
-      return addPlayer(state, action.name, action.manaStack);
+      return addPlayer(state);
     case REMOVE_PLAYER:
       return removePlayer(state);
     case RESET_ALL:
       return resetAll(state);
     case SET_STATE:
       return setState(state, action.newState);
-    case SET_WINNER:
-      return setWinner(state, action.id);
+    case NEXT_HERO:
+      return nextHero(state, action.id);
+    case PREV_HERO:
+      return prevHero(state, action.id);
     default:
       return state;
   }

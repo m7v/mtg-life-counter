@@ -5,7 +5,7 @@ import * as actions from '../../../helpers/actionCreators';
 
 class Creater extends Component {
   increment() {
-    this.props.addPlayer('new Player', 'www');
+    this.props.addPlayer();
   }
 
   render() {

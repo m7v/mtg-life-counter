@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../../helpers/actionCreators';
+import Avatar from "./Avatar/Avatar";
+import LifeCounter from "./LifeCounter/LifeCounter";
 
 class PlayerCounter extends Component {
   increment() {
@@ -12,41 +14,31 @@ class PlayerCounter extends Component {
     this.props.decrement(this.props.index);
   }
 
+  nextHero() {
+    this.props.nextHero(this.props.index);
+  }
+
+  prevHero() {
+    this.props.prevHero(this.props.index);
+  }
+
   render() {
     const player = this.props.player;
     return (
       <div className="icon icon-player">
-        <div className="avatar--container">
-          <div className="btn avatar-controls btn-next" onClick={() => this.increment()}></div>
-          <div className="btn avatar-controls btn-prev" onClick={() => this.decrement()}></div>
-          <figure>
-            <div className="line"></div>
-            <div>
-              <img className="full" src="http://38.media.tumblr.com/5cb16bcbf2428b8f33f011383279b837/tumblr_myzzqeaGuA1tophcho1_1280.jpg"/>
-              <figcaption><h3>{ player.get('name') }</h3></figcaption>
-            </div>
-          </figure>
-        </div>
-        <div className="life-counter--container">
-          <figure className="life-counter">
-            <span className="life-total">{ player.get('life') }</span>
-          </figure>
-          <div className="btn btn-increment" onClick={() => this.increment()}></div>
-          <div className="btn btn-decrement" onClick={() => this.decrement()}></div>
-        </div>
+        <Avatar currentHero={player.get('currentHero')}
+                nextHero={this.props.nextHero.bind(this, this.props.index)}
+                prevHero={this.props.prevHero.bind(this, this.props.index)}/>
+        <LifeCounter life={player.get('life')}
+                     incrementFunc={this.increment.bind(this)}
+                     decrementFunc={this.decrement.bind(this)}/>
       </div>
     );
   }
-}
-
-function mapStateToProps(state) {
-  return {
-    players: state.players
-  };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(actions, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlayerCounter);
+export default connect(null, mapDispatchToProps)(PlayerCounter);
