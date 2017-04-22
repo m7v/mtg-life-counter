@@ -10,7 +10,7 @@ class Creater extends Component {
 
   render() {
     return (
-      <button onClick={() => this.increment()}>Add Player</button>
+      <div className="action action--creater" onClick={() => this.increment()}/>
     );
   }
 }

@@ -10,7 +10,7 @@ import Remover from './Remover/Remover';
 class CounterContainer extends Component {
   render() {
     return <div>
-      <div>
+      <div className="actions">
         <Creater/>
         <Remover/>
         <Reseter/>

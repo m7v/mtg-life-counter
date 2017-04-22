@@ -116,6 +116,25 @@
         height: 48px;
     }
 
+    .logo {
+        background: url(./../img/Logo_M15_EN.png) no-repeat;
+        width: 300px;
+        height: 300px;
+        background-size: 300px;
+        position: absolute;
+        z-index: 2;
+    }
+
+    .slogan {
+        background: url(./../img/Logo_M15_Supplemental_EN_blk.png) no-repeat;
+        width: 300px;
+        height: 300px;
+        background-size: 300px;
+        position: absolute;
+        z-index: 2;
+        top: 65%;
+        left: 75%;
+    }
 
     figure {
         border-style: solid;
@@ -137,6 +156,38 @@
 
     .life-counter--container {
         margin-top: 70px;
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .action {
+        margin: 0 20px;
+    }
+
+    .action.action--creater {
+        background: url("./../img/add-player.png");
+        background-size: 52px;
+        width: 52px;
+        height: 52px;
+    }
+
+    .action.action--remover {
+        background: url("./../img/remove-player.png");
+        background-size: 52px;
+        width: 52px;
+        height: 52px;
+    }
+
+    .action.action--reset {
+        background: url("./../img/sinchronize.png");
+        background-size: 52px;
+        width: 52px;
+        height: 52px;
     }
 
     figure.life-counter {

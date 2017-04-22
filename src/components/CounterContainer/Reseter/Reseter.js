@@ -10,7 +10,7 @@ class Reseter extends Component {
 
   render() {
     return (
-      <button onClick={() => this.resetAll()}>Reset All</button>
+      <div className="action action--reset" onClick={() => this.resetAll()}/>
     );
   }
 }

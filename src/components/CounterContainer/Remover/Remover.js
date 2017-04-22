@@ -10,7 +10,7 @@ class Remover extends Component {
 
   render() {
     return (
-      <button onClick={() => this.decrement()}>Remove Player</button>
+      <div className="action action--remover" onClick={() => this.decrement()}/>
     );
   }
 }

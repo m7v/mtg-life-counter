@@ -40,6 +40,8 @@
       To begin the development, run `npm start`.
       To create a production bundle, use `npm run build`.
     -->
+    <div class="logo"></div>
+    <div class="slogan"></div>
     <div class="container">
       <section id="trailer" class="is_overlay">
         <video loop="" autoplay="autoplay" muted="muted" poster="img/background.jpg">
@@ -59,16 +61,6 @@
         </div>
       </section>
     </div>
-    <script type="text/javascript">
-      window.onload = function () {
-        var element = document.getElementsByClassName('splash-screen');
-        if (element.length && element[0]) {
-          element = element[0];
-          var classString = element.className;
-          element.className = classString + " hide";
-        }
-      }
-    </script>
     <script type="text/javascript">
 //      if ('serviceWorker' in navigator) {
 //        var reg = navigator.serviceWorker.register('./sw.js');
