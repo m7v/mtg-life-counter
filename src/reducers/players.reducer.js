@@ -31,7 +31,8 @@ function nextHero(state, id) {
 function prevHero(state, id) {
   const player = state.get(id);
   const position = player.get('position');
-  if (position - 1 > 0) {
+
+  if (position - 1 >= 0) {
     const newPlayer = player.set('position', position - 1);
     const newHero = HEROLIST.get(newPlayer.get('position'));
     return state.set(id, newPlayer.set('currentHero', newHero));
