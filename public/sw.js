@@ -2,6 +2,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open('homepage').then((cache) => {
       return cache.addAll([
+        '/',
         '/img/*.jpg',
         '/img/add-player.png',
         '/img/arrow.svg',
