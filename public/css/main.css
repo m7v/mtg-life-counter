@@ -230,7 +230,7 @@
 
     .btn {
         cursor: pointer;
-        background: url(./../img/arrow-right3.svg) no-repeat;
+        background: url(../img/arrow.svg) no-repeat;
         background-size: 48px;
         height: 48px;
         width: 48px;
@@ -330,6 +330,16 @@
     .full.gisa {
         background: url("./../img/avatar_gisa.jpg") no-repeat;
         background-size: 480px;
+    }
+    .full.nissa {
+        background: url("./../img/avatar_nissa.jpg") no-repeat;
+        background-size: 480px;
+        background-position: -50px;
+    }
+    .full.nahiri {
+        background: url("./../img/avatar_nahiri.jpg") no-repeat;
+        background-size: 480px;
+        background-position: -50px 0px;
     }
 
     figure div figcaption {

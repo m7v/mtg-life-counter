@@ -62,19 +62,19 @@
       </section>
     </div>
     <script type="text/javascript">
-//      if ('serviceWorker' in navigator) {
-//        var reg = navigator.serviceWorker.register('./sw.js');
-//        reg.then(function () {
-//          reg = navigator.serviceWorker.ready;
-//          reg.then(function (reg) {
-//            reg.sync.register('syncdata');
-//          }).catch(function (err) {
-//            console.log(err);
-//          });
-//        }).catch(function (err) {
-//          console.log(err);
-//        });
-//      }
+      if ('serviceWorker' in navigator) {
+        var reg = navigator.serviceWorker.register('./sw.js');
+        reg.then(function () {
+          reg = navigator.serviceWorker.ready;
+          reg.then(function (reg) {
+            reg.sync.register('syncdata');
+          }).catch(function (err) {
+            console.log(err);
+          });
+        }).catch(function (err) {
+          console.log(err);
+        });
+      }
     </script>
     <link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
   </body>

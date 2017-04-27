@@ -30,5 +30,15 @@ export const HEROLIST = List([
     name: 'Gisa',
     color: 'black',
     class: "gisa"
+  },
+  {
+    name: 'Nahiru',
+    color: 'white',
+    class: "nahiri"
+  },
+  {
+    name: 'Nissa',
+    color: 'green',
+    class: "nissa"
   }
 ]);
