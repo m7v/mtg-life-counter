@@ -8,5 +8,5 @@ cache:
 script:
   - npm test
   - npm run build
-after_sripts:
+after_sript:
 - npm install coveralls && cat ./coverage/lcov.info | coveralls
