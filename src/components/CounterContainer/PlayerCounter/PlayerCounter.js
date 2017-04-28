@@ -27,11 +27,11 @@ class PlayerCounter extends Component {
     return (
       <div className="icon icon-player">
         <Avatar currentHero={player.get('currentHero')}
-                nextHero={this.props.nextHero.bind(this, this.props.index)}
-                prevHero={this.props.prevHero.bind(this, this.props.index)}/>
+                nextHero={() => this.props.nextHero(this.props.index)}
+                prevHero={() => this.props.prevHero(this.props.index)}/>
         <LifeCounter life={player.get('life')}
-                     incrementFunc={this.increment.bind(this)}
-                     decrementFunc={this.decrement.bind(this)}/>
+                     increment={() => this.increment()}
+                     decrement={() => this.decrement()}/>
       </div>
     );
   }
