@@ -7,8 +7,8 @@ export class LifeCounter extends Component {
         <figure className="life-counter">
           <span className="life-total">{ this.props.life }</span>
         </figure>
-        <div className="btn btn-decrement" onClick={this.props.decrement}/>
-        <div className="btn btn-increment" onClick={this.props.increment}/>
+        <div className="btn life-actions btn-decrement" onClick={this.props.decrement}/>
+        <div className="btn life-actions btn-increment" onClick={this.props.increment}/>
       </div>
     );
   }

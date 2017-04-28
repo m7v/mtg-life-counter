@@ -6,32 +6,16 @@ import Avatar from "./Avatar/Avatar";
 import LifeCounter from "./LifeCounter/LifeCounter";
 
 class PlayerCounter extends Component {
-  increment() {
-    this.props.increment(this.props.index);
-  }
-
-  decrement() {
-    this.props.decrement(this.props.index);
-  }
-
-  nextHero() {
-    this.props.nextHero(this.props.index);
-  }
-
-  prevHero() {
-    this.props.prevHero(this.props.index);
-  }
-
   render() {
     const player = this.props.player;
     return (
       <div className="icon icon-player">
         <Avatar currentHero={player.get('currentHero')}
-                nextHero={this.nextHero.bind(this)}
-                prevHero={this.prevHero.bind(this)}/>
+                nextHero={() => this.props.nextHero(this.props.index)}
+                prevHero={() => this.props.prevHero(this.props.index)}/>
         <LifeCounter life={player.get('life')}
-                     increment={this.increment.bind(this)}
-                     decrement={this.decrement.bind(this)}/>
+                     increment={() => this.props.increment(this.props.index)}
+                     decrement={() => this.props.decrement(this.props.index)}/>
       </div>
     );
   }
