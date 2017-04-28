@@ -8,6 +8,13 @@ cache:
 script:
   - npm test
   - npm run build
+deploy:
+  provider: pages
+  local_dir: dist
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
 after_script:
   - npm install coveralls
   - npm test -- --coverage
