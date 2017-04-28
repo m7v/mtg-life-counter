@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as actions from '../../helpers/actionCreators';
 import PlayerCounter from './PlayerCounter/PlayerCounter';
 import Reseter from './Reseter/Reseter';
 import Creater from './Creater/Creater';
 import Remover from './Remover/Remover';
 
-class CounterContainer extends Component {
+export default class CounterContainer extends Component {
   render() {
     return <div>
       <div className="actions">
@@ -16,22 +13,10 @@ class CounterContainer extends Component {
         <Reseter/>
       </div>
       <div className="playersContainer">
-        {this.props.players.map((player, key) => <PlayerCounter key={ key }
-                                                                index={key}
-                                                                player={player}/>)}
+        {this.props.players.map((player, key) =>
+            <PlayerCounter key={ key } index={key} player={player}/>
+        )}
       </div>
     </div>
   }
 }
-
-function mapStateToProps(state) {
-  return {
-    players: state.players
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actions, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CounterContainer);
