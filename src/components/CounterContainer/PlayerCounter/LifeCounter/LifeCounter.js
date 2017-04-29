@@ -1,17 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export class LifeCounter extends Component {
-  render() {
-    return (
-      <div className="life-counter--container">
+export const LifeCounter = ({life, decrement, increment}) =>
+    <div className="life-counter--container">
         <figure className="life-counter">
-          <span className="life-total">{ this.props.life }</span>
+            <span className="life-total">{ life }</span>
         </figure>
-        <div className="btn life-actions btn-decrement" onClick={this.props.decrement}/>
-        <div className="btn life-actions btn-increment" onClick={this.props.increment}/>
-      </div>
-    );
-  }
-}
-
-export default LifeCounter;
+        <div className="btn life-actions btn-decrement" onClick={decrement}/>
+        <div className="btn life-actions btn-increment" onClick={increment}/>
+    </div>;

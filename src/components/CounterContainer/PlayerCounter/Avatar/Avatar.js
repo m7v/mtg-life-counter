@@ -1,22 +1,14 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Avatar extends Component {
-  render() {
-    const hero = this.props.currentHero;
-    return (
-      <div className="avatar--container">
-        <div className="btn avatar-controls btn-next" onClick={this.props.nextHero}/>
-        <div className="btn avatar-controls btn-prev" onClick={this.props.prevHero}/>
+export const Avatar = ({currentHero, nextHero, prevHero}) =>
+    <div className="avatar--container">
+        <div className="btn avatar-controls btn-next" onClick={nextHero}/>
+        <div className="btn avatar-controls btn-prev" onClick={prevHero}/>
         <figure>
-          <div className={"line"}/>
-          <div>
-            <div className={"full " + hero.class}/>
-            <figcaption><h3>{ hero.name }</h3></figcaption>
-          </div>
+            <div className={'line'}/>
+            <div>
+                <div className={'full ' + currentHero.class}/>
+                <figcaption><h3>{ currentHero.name }</h3></figcaption>
+            </div>
         </figure>
-      </div>
-    );
-  }
-}
-
-export default Avatar;
+    </div>;

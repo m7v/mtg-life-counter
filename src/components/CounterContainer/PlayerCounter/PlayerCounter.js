@@ -1,28 +1,22 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import * as actions from '../../../helpers/actionCreators';
-import Avatar from "./Avatar/Avatar";
-import LifeCounter from "./LifeCounter/LifeCounter";
+import { Avatar } from './Avatar/Avatar';
+import { LifeCounter } from './LifeCounter/LifeCounter';
 
-class PlayerCounter extends Component {
-  render() {
-    const player = this.props.player;
-    return (
-      <div className="icon icon-player">
+const PlayerCounter = ({index, player, nextHero, prevHero, increment, decrement}) =>
+    <div className="icon icon-player">
         <Avatar currentHero={player.get('currentHero')}
-                nextHero={() => this.props.nextHero(this.props.index)}
-                prevHero={() => this.props.prevHero(this.props.index)}/>
+                nextHero={() => nextHero(index)}
+                prevHero={() => prevHero(index)}/>
         <LifeCounter life={player.get('life')}
-                     increment={() => this.props.increment(this.props.index)}
-                     decrement={() => this.props.decrement(this.props.index)}/>
-      </div>
-    );
-  }
-}
+                     increment={() => increment(index)}
+                     decrement={() => decrement(index)}/>
+    </div>;
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actions, dispatch)
+    return bindActionCreators(actions, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(PlayerCounter);

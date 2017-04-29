@@ -1,6 +1,6 @@
 {
   "name": "mtg_counter",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "private": true,
   "homepage": "https://andrew-mikhailov.github.io/mtg-life-counter",
   "dependencies": {
@@ -13,9 +13,16 @@
     "redux": "^3.6.0"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "chai": "^3.5.0",
     "chai-immutable": "1.5.3",
     "css-loader": "0.23.1",
+    "eslint": "^3.19.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-bdd": "^2.1.1",
+    "eslint-plugin-const-immutable": "^2.0.0",
+    "eslint-plugin-immutable": "^1.0.0",
+    "eslint-plugin-react": "^6.10.3",
     "gh-pages": "^0.12.0",
     "jsdom": "8.0.4",
     "mocha": "2.4.5",
@@ -24,6 +31,7 @@
     "serve": "^5.1.4"
   },
   "scripts": {
+    "eslint": "eslint ./src",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

@@ -1,111 +1,104 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {List, Map} from 'immutable';
-import {createStore} from 'redux';
-import {Provider} from 'react-redux';
 import {expect} from 'chai';
 
 import {
-  increment,
-  decrement,
-  addPlayer,
-  removePlayer,
-  nextHero,
-  prevHero,
-  resetAll,
-  setState
-} from "../helpers/actionCreators";
-import reducers from '../reducers/players.reducer';
-import App from '../components/App/App';
+    increment,
+    decrement,
+    addPlayer,
+    removePlayer,
+    nextHero,
+    prevHero,
+    resetAll,
+    setState
+} from '../helpers/actionCreators';
 import {
-  INCREASE,
-  DECREASE,
-  ADD_PLAYER,
-  REMOVE_PLAYER,
-  NEXT_HERO,
-  PREV_HERO,
-  RESET_ALL,
-  SET_STATE
-} from "../helpers/actionTypes";
+    INCREASE,
+    DECREASE,
+    ADD_PLAYER,
+    REMOVE_PLAYER,
+    NEXT_HERO,
+    PREV_HERO,
+    RESET_ALL,
+    SET_STATE
+} from '../helpers/actionTypes';
 
 describe('Actions', () => {
-  it('Increase', () => {
-    const id = 1;
-    const action = increment(id);
-    const expected = {
-      type: INCREASE,
-      id
-    };
+    it('Increase', () => {
+        const id = 1;
+        const action = increment(id);
+        const expected = {
+            type: INCREASE,
+            id
+        };
 
-    expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
-  });
+        expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
+    });
 
-  it('Decrease', () => {
-    const id = 1;
-    const action = decrement(id);
-    const expected = {
-      type: DECREASE,
-      id
-    };
+    it('Decrease', () => {
+        const id = 1;
+        const action = decrement(id);
+        const expected = {
+            type: DECREASE,
+            id
+        };
 
-    expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
-  });
+        expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
+    });
 
-  it('Add Player', () => {
-    const action = addPlayer();
-    const expected = {
-      type: ADD_PLAYER,
-    };
+    it('Add Player', () => {
+        const action = addPlayer();
+        const expected = {
+            type: ADD_PLAYER
+        };
 
-    expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
-  });
+        expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
+    });
 
-  it('Remove Player', () => {
-    const action = removePlayer();
-    const expected = {
-      type: REMOVE_PLAYER,
-    };
+    it('Remove Player', () => {
+        const action = removePlayer();
+        const expected = {
+            type: REMOVE_PLAYER
+        };
 
-    expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
-  });
+        expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
+    });
 
-  it('Next Hero', () => {
-    const id = 3;
-    const action = nextHero(id);
-    const expected = {
-      type: NEXT_HERO,
-      id
-    };
+    it('Next Hero', () => {
+        const id = 3;
+        const action = nextHero(id);
+        const expected = {
+            type: NEXT_HERO,
+            id
+        };
 
-    expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
-  });
+        expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
+    });
 
-  it('Prev Hero', () => {
-    const id = 3;
-    const action = prevHero(id);
-    const expected = {
-      type: PREV_HERO,
-      id
-    };
+    it('Prev Hero', () => {
+        const id = 3;
+        const action = prevHero(id);
+        const expected = {
+            type: PREV_HERO,
+            id
+        };
 
-    expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
-  });
+        expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
+    });
 
-  it('Reset All', () => {
-    const action = resetAll();
-    const expected = {
-      type: RESET_ALL
-    };
+    it('Reset All', () => {
+        const action = resetAll();
+        const expected = {
+            type: RESET_ALL
+        };
 
-    expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
-  });
+        expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
+    });
 
-  it('Set state', () => {
-    const action = setState();
-    const expected = {
-      type: SET_STATE
-    };
+    it('Set state', () => {
+        const action = setState();
+        const expected = {
+            type: SET_STATE
+        };
 
-    expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
-  });
+        expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
+    });
 });
