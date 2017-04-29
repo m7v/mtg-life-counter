@@ -5,7 +5,7 @@ import {
     scryRenderedDOMComponentsWithClass,
     Simulate
 } from 'react-dom/test-utils';
-import {Map, List} from 'immutable';
+import {Map} from 'immutable';
 import {expect} from 'chai';
 import configureMockStore from 'redux-mock-store';
 
@@ -16,13 +16,8 @@ describe('PlayerCounter', () => {
     const mockStore = configureMockStore();
     let store; // eslint-disable-line immutable/no-let
 
-    beforeEach(function() {
-        store = mockStore({
-            players: new List([
-                new Map({life: 20, position: 0, currentHero: HEROLIST.get(0)}),
-                new Map({life: 20, position: 1, currentHero: HEROLIST.get(1)})
-            ])
-        });
+    beforeEach(() => {
+        store = mockStore({});
     });
 
     it('renders without crashing', () => {

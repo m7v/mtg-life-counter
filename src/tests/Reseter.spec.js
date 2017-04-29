@@ -13,7 +13,7 @@ describe('Creater', () => {
     const mockStore = configureMockStore();
     let store; // eslint-disable-line immutable/no-let
 
-    beforeEach(function() {
+    beforeEach(() => {
         store = mockStore({});
     });
 

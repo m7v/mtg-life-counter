@@ -7,7 +7,7 @@ export const Avatar = ({currentHero, nextHero, prevHero}) =>
         <figure>
             <div className={'line'}/>
             <div>
-                <div className={'full ' + currentHero.class}/>
+                <div className={`full ${currentHero.class}`}/>
                 <figcaption><h3>{ currentHero.name }</h3></figcaption>
             </div>
         </figure>
