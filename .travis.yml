@@ -17,6 +17,5 @@ deploy:
   on:
     branch: master
 after_script:
-  - npm install coveralls
   - npm test -- --coverage
   - cat ./coverage/lcov.info | coveralls

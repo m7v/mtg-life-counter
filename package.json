@@ -16,6 +16,7 @@
     "babel-eslint": "^7.2.3",
     "chai": "^3.5.0",
     "chai-immutable": "1.5.3",
+    "coveralls": "^2.13.1",
     "css-loader": "0.23.1",
     "eslint": "^3.19.0",
     "eslint-config-react": "^1.1.7",
