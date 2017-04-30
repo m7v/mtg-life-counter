@@ -14,7 +14,7 @@ import {
 } from '../helpers/actionTypes';
 
 import {HEROLIST} from '../helpers/heroList';
-import reducers from '../reducers/players.reducer';
+import reducers from './players.reducer';
 
 describe('Players Reducer', () => {
     it('Initialize app state', () => {

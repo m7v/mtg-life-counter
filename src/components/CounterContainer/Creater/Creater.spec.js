@@ -7,7 +7,7 @@ import {
 import {expect} from 'chai';
 import configureMockStore from 'redux-mock-store';
 
-import Creater from '../components/CounterContainer/Creater/Creater';
+import Creater from './Creater';
 
 describe('Creater', () => {
     const mockStore = configureMockStore();

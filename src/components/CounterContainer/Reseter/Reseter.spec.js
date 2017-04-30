@@ -7,7 +7,7 @@ import {
 import {expect} from 'chai';
 import configureMockStore from 'redux-mock-store';
 
-import Remover from '../components/CounterContainer/Remover/Remover';
+import Reseter from './Reseter';
 
 describe('Creater', () => {
     const mockStore = configureMockStore();
@@ -19,10 +19,10 @@ describe('Creater', () => {
 
     it('renders without crashing', () => {
         const component = renderIntoDocument(
-            <Remover store={store}/>
+            <Reseter store={store}/>
         );
-        const btn = findRenderedDOMComponentWithClass(component, 'action--remover');
+        const btn = findRenderedDOMComponentWithClass(component, 'action--reset');
         Simulate.click(btn);
-        expect(btn.className).to.equal('action action--remover');
+        expect(btn.className).to.equal('action action--reset');
     });
 });

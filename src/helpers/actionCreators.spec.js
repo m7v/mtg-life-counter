@@ -1,5 +1,4 @@
 import {expect} from 'chai';
-
 import {
     increment,
     decrement,
@@ -9,7 +8,7 @@ import {
     prevHero,
     resetAll,
     setState
-} from '../helpers/actionCreators';
+} from './actionCreators';
 import {
     INCREASE,
     DECREASE,
@@ -19,7 +18,7 @@ import {
     PREV_HERO,
     RESET_ALL,
     SET_STATE
-} from '../helpers/actionTypes';
+} from './actionTypes';
 
 describe('Actions', () => {
     it('Increase', () => {

@@ -4,8 +4,8 @@ import {List, Map} from 'immutable';
 import {Provider} from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 
-import {HEROLIST} from '../helpers/heroList';
-import App from '../components/App/App';
+import {HEROLIST} from '../../helpers/heroList';
+import App from './App';
 
 describe('Initial Application', () => {
     const mockStore = configureMockStore();

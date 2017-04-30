@@ -9,8 +9,8 @@ import {Map} from 'immutable';
 import {expect} from 'chai';
 import configureMockStore from 'redux-mock-store';
 
-import {HEROLIST} from '../helpers/heroList';
-import PlayerCounter from '../components/CounterContainer/PlayerCounter/PlayerCounter';
+import {HEROLIST} from '../../../helpers/heroList';
+import PlayerCounter from './PlayerCounter';
 
 describe('PlayerCounter', () => {
     const mockStore = configureMockStore();
