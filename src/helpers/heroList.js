@@ -1,44 +1,46 @@
-import {List} from 'immutable';
+import { List } from 'immutable';
 
-export const HEROLIST = new List([
+const HEROLIST = new List([
     {
         name: 'Garruk',
         color: 'green',
-        class: 'garruk'
+        class: 'garruk',
     },
     {
         name: 'Chandra',
         color: 'red',
-        class: 'chandra'
+        class: 'chandra',
     },
     {
         name: 'Liliana',
         color: 'purple',
-        class: 'liliana'
+        class: 'liliana',
     },
     {
         name: 'Jace',
         color: 'blue',
-        class: 'jace'
+        class: 'jace',
     },
     {
         name: 'Ajani',
         color: 'white',
-        class: 'ajani'
+        class: 'ajani',
     },
     {
         name: 'Gisa',
         color: 'black',
-        class: 'gisa'
+        class: 'gisa',
     },
     {
         name: 'Nahiru',
         color: 'white',
-        class: 'nahiri'
+        class: 'nahiri',
     },
     {
         name: 'Nissa',
         color: 'green',
-        class: 'nissa'
-    }
+        class: 'nissa',
+    },
 ]);
+
+export default HEROLIST;

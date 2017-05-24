@@ -1,11 +1,11 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as actions from '../../../helpers/actionCreators';
-import { Avatar } from './Avatar/Avatar';
-import { LifeCounter } from './LifeCounter/LifeCounter';
+import Avatar from './Avatar/Avatar';
+import LifeCounter from './LifeCounter/LifeCounter';
 
-const PlayerCounter = ({index, player, nextHero, prevHero, increment, decrement}) =>
+const PlayerCounter = ({ index, player, nextHero, prevHero, increment, decrement }) =>
     <div className="icon icon-player">
         <Avatar currentHero={player.get('currentHero')}
                 nextHero={() => nextHero(index)}

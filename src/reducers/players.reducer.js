@@ -1,4 +1,4 @@
-import {List, Map} from 'immutable';
+import { List, Map } from 'immutable';
 import {
     ADD_PLAYER,
     REMOVE_PLAYER,
@@ -9,9 +9,9 @@ import {
     MAX_PLAYERS,
     MIN_PLAYERS,
     NEXT_HERO,
-    PREV_HERO
+    PREV_HERO,
 } from '../helpers/actionTypes';
-import {HEROLIST} from '../helpers/heroList';
+import HEROLIST from '../helpers/heroList';
 
 function nextHero(state, id) {
     const player = state.get(id);
@@ -60,7 +60,7 @@ function addPlayer(state) {
         return state.push(new Map({
             life: 20,
             position: state.size,
-            currentHero: HEROLIST.get(state.size)
+            currentHero: HEROLIST.get(state.size),
         }));
     }
     return state;

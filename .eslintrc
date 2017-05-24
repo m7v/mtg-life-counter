@@ -56,10 +56,16 @@
     },
 
     "plugins": [
-        "bdd", // Валидирует тесты на .only и .skip
+        "bdd",
+        "mocha",
         "react",
         "immutable"
     ],
+
+    "extends": [
+        "airbnb-base"
+    ],
+
     "settings": {
         "react": {
             "createClass": "createClass", // Regex for Component Factory to use, default to "createClass"
@@ -69,13 +75,14 @@
     },
 
     "rules": {
+        "mocha/no-exclusive-tests": "error",
+
         ////////// Possible Errors //////////
         "immutable/no-let": 2,
         "immutable/no-this": 2,
         "immutable/no-mutation": 2,
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
-        "comma-dangle": [2, "never"], // disallow trailing commas in object literals
         "no-cond-assign": [2, "except-parens"], // disallow assignment in conditional expressions
         "no-console": 2,              // disallow use of console (off by default in the node environment)
         "no-constant-condition": 2,   // disallow use of constant expressions in conditions
@@ -283,7 +290,5 @@
 
         "bdd/focus": 2, // Валидация использования .only в тестах
         "bdd/exclude": 1 // Валидация использования .skip в тестах
-    },
-
-    "extends": "eslint:recommended"
+    }
 }

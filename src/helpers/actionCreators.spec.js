@@ -1,4 +1,4 @@
-import {expect} from 'chai';
+import { expect } from 'chai';
 import {
     increment,
     decrement,
@@ -7,7 +7,7 @@ import {
     nextHero,
     prevHero,
     resetAll,
-    setState
+    setState,
 } from './actionCreators';
 import {
     INCREASE,
@@ -17,7 +17,7 @@ import {
     NEXT_HERO,
     PREV_HERO,
     RESET_ALL,
-    SET_STATE
+    SET_STATE,
 } from './actionTypes';
 
 describe('Actions', () => {
@@ -26,7 +26,7 @@ describe('Actions', () => {
         const action = increment(id);
         const expected = {
             type: INCREASE,
-            id
+            id,
         };
 
         expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
@@ -37,7 +37,7 @@ describe('Actions', () => {
         const action = decrement(id);
         const expected = {
             type: DECREASE,
-            id
+            id,
         };
 
         expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
@@ -46,7 +46,7 @@ describe('Actions', () => {
     it('Add Player', () => {
         const action = addPlayer();
         const expected = {
-            type: ADD_PLAYER
+            type: ADD_PLAYER,
         };
 
         expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
@@ -55,7 +55,7 @@ describe('Actions', () => {
     it('Remove Player', () => {
         const action = removePlayer();
         const expected = {
-            type: REMOVE_PLAYER
+            type: REMOVE_PLAYER,
         };
 
         expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
@@ -66,7 +66,7 @@ describe('Actions', () => {
         const action = nextHero(id);
         const expected = {
             type: NEXT_HERO,
-            id
+            id,
         };
 
         expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
@@ -77,7 +77,7 @@ describe('Actions', () => {
         const action = prevHero(id);
         const expected = {
             type: PREV_HERO,
-            id
+            id,
         };
 
         expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
@@ -86,7 +86,7 @@ describe('Actions', () => {
     it('Reset All', () => {
         const action = resetAll();
         const expected = {
-            type: RESET_ALL
+            type: RESET_ALL,
         };
 
         expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));
@@ -95,7 +95,7 @@ describe('Actions', () => {
     it('Set state', () => {
         const action = setState();
         const expected = {
-            type: SET_STATE
+            type: SET_STATE,
         };
 
         expect(JSON.stringify(action)).to.equal(JSON.stringify(expected));

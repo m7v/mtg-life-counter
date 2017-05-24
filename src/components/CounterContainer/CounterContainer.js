@@ -4,7 +4,7 @@ import Reseter from './Reseter/Reseter';
 import Creater from './Creater/Creater';
 import Remover from './Remover/Remover';
 
-export const CounterContainer = ({players}) => <div>
+const CounterContainer = ({players}) => <div>
     <div className="actions">
         <Creater/>
         <Remover/>
@@ -12,7 +12,9 @@ export const CounterContainer = ({players}) => <div>
     </div>
     <div className="playersContainer">
         {players.map((player, key) =>
-            <PlayerCounter key={ key } index={key} player={player}/>
+            <PlayerCounter key={ key } index={key} player={player}/>,
         )}
     </div>
 </div>;
+
+export default CounterContainer;

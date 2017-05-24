@@ -2,11 +2,10 @@ import React from 'react';
 import {
     renderIntoDocument,
     findRenderedDOMComponentWithClass,
-    Simulate
+    Simulate,
 } from 'react-dom/test-utils';
-import {expect} from 'chai';
+import { expect } from 'chai';
 import configureMockStore from 'redux-mock-store';
-
 import Reseter from './Reseter';
 
 describe('Creater', () => {
@@ -19,7 +18,7 @@ describe('Creater', () => {
 
     it('renders without crashing', () => {
         const component = renderIntoDocument(
-            <Reseter store={store}/>
+            <Reseter store={store}/>,
         );
         const btn = findRenderedDOMComponentWithClass(component, 'action--reset');
         Simulate.click(btn);

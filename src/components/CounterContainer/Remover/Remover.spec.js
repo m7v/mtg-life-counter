@@ -2,11 +2,10 @@ import React from 'react';
 import {
     renderIntoDocument,
     findRenderedDOMComponentWithClass,
-    Simulate
+    Simulate,
 } from 'react-dom/test-utils';
-import {expect} from 'chai';
+import { expect } from 'chai';
 import configureMockStore from 'redux-mock-store';
-
 import Remover from './Remover';
 
 describe('Creater', () => {
@@ -19,7 +18,7 @@ describe('Creater', () => {
 
     it('renders without crashing', () => {
         const component = renderIntoDocument(
-            <Remover store={store}/>
+            <Remover store={store}/>,
         );
         const btn = findRenderedDOMComponentWithClass(component, 'action--remover');
         Simulate.click(btn);

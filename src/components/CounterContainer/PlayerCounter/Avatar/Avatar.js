@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Avatar = ({currentHero, nextHero, prevHero}) =>
+const Avatar = ({ currentHero, nextHero, prevHero }) =>
     <div className="avatar--container">
         <div className="btn avatar-controls btn-next" onClick={nextHero}/>
         <div className="btn avatar-controls btn-prev" onClick={prevHero}/>
@@ -12,3 +12,5 @@ export const Avatar = ({currentHero, nextHero, prevHero}) =>
             </div>
         </figure>
     </div>;
+
+export default Avatar;

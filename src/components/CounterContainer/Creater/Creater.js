@@ -1,9 +1,9 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as actions from '../../../helpers/actionCreators';
 
-const Creater = ({addPlayer}) =>
+const Creater = ({ addPlayer }) =>
     <div className="action action--creater" onClick={addPlayer}/>;
 
 function mapDispatchToProps(dispatch) {
