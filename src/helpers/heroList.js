@@ -32,7 +32,7 @@ const HEROLIST = new List([
         class: 'gisa',
     },
     {
-        name: 'Nahiri',
+        name: 'Nahiru',
         color: 'white',
         class: 'nahiri',
     },
