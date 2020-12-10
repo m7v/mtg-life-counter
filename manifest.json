@@ -1,0 +1,15 @@
+{
+  "background_color": "#222",
+  "name": "MTG Life Counter",
+  "short_name": "Life Counter",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "logo-mtg.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "orientation": "portrait"
+}
